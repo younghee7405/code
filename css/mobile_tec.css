@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+/* 햄버거 삼선버튼 -------------------------------------------------------- */
+
+.ham{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    margin-right: 50px;
+}
+.ham_menu_btn{
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+.ham_menu_btn span{
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.ham_menu_btn span:nth-child(1){
+    top: 0;
+}
+
+.ham.on span:nth-child(1){
+    transform: translateY(50%) rotate(45deg);
+    top: calc(50% - 1px);
+    transition-delay: 0.2s;
+    
+}
+
+.ham_menu_btn span:nth-child(2){
+    top: calc(50% - 1px);
+    opacity: 1;
+}
+
+.ham.on span:nth-child(2){
+    opacity: 0;
+    transition-delay: 0.1s;
+}
+
+.ham_menu_btn span:nth-child(3){
+    bottom: 0;
+}
+
+.ham.on span:nth-child(3){
+    transform: translateY(-50%) rotate(-45deg);
+    top: 50%;
+    transition-delay: 0.3s;
+}
+
+/* m_nav 모바일 메뉴 ---------------------------------------------------- */
+
+.m_nav{
+    position: fixed;
+    left:-58%; top: 0;
+    height: 100vh;
+    width: 58%;
+    z-index: 100;
+    background-color: rgba(47, 88, 149, 0.7);
+    transition: all 0.6s;
+}
+
+.m_nav.act{
+    left: 0;
+}
+
+.m_menu{
+    width: 50%;
+    margin: 30px auto;
+
+}
+
+.m_menu > li{
+    color: white;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #f1f1f1;
+}
+
+.m_menu > li > a{
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-family: 'roboto';
+}
+
+.m_sub{
+    display: none;
+}
+.m_sub li{}
+.m_sub li a{
+    display: block;
+    /* text-align: center; */
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+@media screen and (max-width:1520px) {
+
+/* 헤더영역 ----------------------------------------------- */
+    #header{
+        box-shadow: none;
+        /* background-color: transparent; */
+    }
+
+    #header.act{
+        background-color: rgba(47, 88, 149, 0.7);
+        color: #147;
+    }
+
+    .head_inner{
+        padding-top: 0;
+    }
+
+    .ham{
+        display: block;
+    }
+    
+    .nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width:1250px){
+
+    .tech_cont1{
+        margin-bottom: 50px;
+    }
+
+    .tech_cont2 {
+        margin-bottom: 100px;
+    }
+    .container{
+        align-items: center;
+        text-align: center;
+    }
+
+    .inner_img{
+        height: 500px;
+        width: 500px;
+    }
+
+    .text_wrap h2{
+        font-size: 24px;
+    }
+    .text_wrap p{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:1035px){
+    .container{
+        flex-direction: column;
+    }
+
+    .tech_cont3 h2{
+        font-size: 30px;
+    }
+
+    .tech_cont3 p{
+        font-size: 20px;
+    }
+
+    .cont3_img{
+        height: 430px;
+    }
+
+    .tech_cont4 h2{
+        font-size: 30px;
+    }
+
+    .tech_cont4 p{
+        font-size: 20px;
+    }
+    .cont4_img{
+        height: 430px;
+    }
+}
+
+@media screen and (max-width:700px){
+    .tech_cont1{
+        height: 500px;
+    }
+
+    .cont1_inner_txt{
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .tech_cont3{
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:430px){
+    #footer{
+        height: auto;
+    }
+
+    .foot_wrap{
+        flex-direction: column;
+    }
+
+    .foot_sns{
+        justify-content: space-between;
+        border-top: 1px dotted gray;
+        height: 100px;
+    }
+}
